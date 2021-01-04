@@ -1,5 +1,7 @@
 package boardgame;
 
+import chess.pieces.King;
+
 public class Board {
 
     private int rows;
@@ -35,4 +37,14 @@ public class Board {
     public Piece piece(Position position) {
         return pieces[position.getRow()][position.getColumn()];
     }
+
+    public void placePiece(Piece piece, Position position) {
+        pieces[position.getRow()][position.getColumn()] = piece;
+        piece.position = position;
+    }
+
+    public void placePiece(King king) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
 }
